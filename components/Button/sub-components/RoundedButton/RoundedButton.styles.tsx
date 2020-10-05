@@ -9,9 +9,15 @@ export const StyledRoundedButton = styled(StyledButton)`
     flex-direction: column;
     justify-content: space-around;
     align-items: center;
-
+    padding: 1rem 0;
+    &:hover{
+        box-shadow: 0px 3px 15px #00000029;
+        cursor: pointer;
+    }
     p {
         font-size: 2rem;
+        margin: 0; 
+
     }
     svg {
         font-size: 6rem;

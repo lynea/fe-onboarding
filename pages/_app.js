@@ -1,12 +1,12 @@
 import React from 'react';
 import theme from '../theme.styles';
 import { ThemeProvider } from 'styled-components';
-import { Normalize } from 'styled-normalize';
+import { GlobalStyle } from '../global-styles';
 
 function MyApp({ Component, pageProps }) {
     return (
         <>
-            <Normalize />
+            <GlobalStyle />
             <ThemeProvider theme={theme}>
                 <Component {...pageProps} />
             </ThemeProvider>
