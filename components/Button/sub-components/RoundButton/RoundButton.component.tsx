@@ -1,12 +1,9 @@
-import React, {FunctionComponent} from 'react'
-import {} from './RoundButton.styles'
-import {RoundButtonProps} from './types'; 
+import React, { FunctionComponent } from 'react';
+import { StyledRoundButton } from './RoundButton.styles';
+import { RoundButtonProps } from './types';
 
-const RoundButton:FunctionComponent <RoundButtonProps> = ({}) =>
+const RoundButton: FunctionComponent<RoundButtonProps> = ({ children }) => (
+    <StyledRoundButton>{children}</StyledRoundButton>
+);
 
-<button></button>
-
-
-
-
-export default RoundButton; 
+export default RoundButton;
