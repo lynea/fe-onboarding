@@ -10,6 +10,12 @@ export const StyledRoundButton = styled(StyledButton)`
     background: ${(props) => props.theme.colors.greyScales.grey[200]};
     align-items: center;
     justify-content: center;
+    cursor: pointer;
+    box-sizing: border-box;
+
+    &:hover {
+        box-shadow: 4px 2px 8px #00000047;
+    }
 
     svg {
         font-size: 2rem;

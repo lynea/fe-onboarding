@@ -1,4 +1,32 @@
-const theme = {
+interface Theme {
+    colors: {
+        main: {
+            purple: {
+                300: string;
+                500: string;
+            };
+            blue: {
+                300: string;
+            };
+            white: string;
+        };
+        greyScales: {
+            grey: {
+                100: string;
+                200: string;
+                300: string;
+            };
+        };
+    };
+    breakPoints: {
+        xs: number;
+        sm: number;
+        md: number;
+        lg: number;
+    };
+}
+
+const theme: Theme = {
     colors: {
         main: {
             purple: {

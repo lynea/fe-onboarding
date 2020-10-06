@@ -10,16 +10,31 @@ export const StyledRoundedButton = styled(StyledButton)`
     justify-content: space-around;
     align-items: center;
     padding: 1rem 0;
-    &:hover{
+    border-radius: 0.3rem;
+
+    &:hover {
         box-shadow: 0px 3px 15px #00000029;
         cursor: pointer;
     }
+
     p {
         font-size: 2rem;
-        margin: 0; 
-
+        margin: 0;
     }
     svg {
         font-size: 6rem;
     }
+
+    @media only screen and (min-width: 600px) {
+        width: 20rem;
+        height: 20rem;
+
+        svg {
+            font-size: 10rem;
+        }
+
+        p {
+            font-size: 4rem;
+        }
+    } ;
 `;

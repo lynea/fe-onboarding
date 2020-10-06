@@ -3,7 +3,8 @@ import Head from 'next/head';
 import Button from '../components/Button/Botton.component';
 import { faLongArrowAltRight } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import MainLayout from '../layout/MainLayout'
+import FullWidthLayout from '../layout/FullWithLayout';
+import { Row } from '../layout/MainLayout.styles';
 
 export default function Home() {
     return (
@@ -12,20 +13,24 @@ export default function Home() {
                 <title>Create Next App</title>
             </Head>
 
-            <MainLayout>
-            <div>
-            <Button type="round" className="ghost">
-                <FontAwesomeIcon icon={faLongArrowAltRight} flip="horizontal" />
-            </Button>
-            <Button type="round" className="ghost">
-                <FontAwesomeIcon icon={faLongArrowAltRight} />
-            </Button>
-            <Button type="rounded" className="ghost" text="test">
-                <FontAwesomeIcon icon={faLongArrowAltRight} />
-            </Button>
-        </div>
-            </MainLayout>
-           
+            <FullWidthLayout>
+                <Row>
+                    <Button type="rounded" className="ghost" text="test">
+                        <FontAwesomeIcon icon={faLongArrowAltRight} />
+                    </Button>
+                    <Button type="rounded" className="ghost" text="test">
+                        <FontAwesomeIcon icon={faLongArrowAltRight} />
+                    </Button>
+                </Row>
+                <Row>
+                    <Button type="rounded" className="ghost" text="test">
+                        <FontAwesomeIcon icon={faLongArrowAltRight} />
+                    </Button>
+                    <Button type="rounded" className="ghost" text="test">
+                        <FontAwesomeIcon icon={faLongArrowAltRight} />
+                    </Button>
+                </Row>
+            </FullWidthLayout>
         </>
     );
 }
