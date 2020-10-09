@@ -18,12 +18,6 @@ interface Theme {
             };
         };
     };
-    breakPoints: {
-        xs: number;
-        sm: number;
-        md: number;
-        lg: number;
-    };
 }
 
 const theme: Theme = {
@@ -45,12 +39,6 @@ const theme: Theme = {
                 300: '#525252',
             },
         },
-    },
-    breakPoints: {
-        xs: 600,
-        sm: 960,
-        md: 1280,
-        lg: 1920,
     },
 };
 

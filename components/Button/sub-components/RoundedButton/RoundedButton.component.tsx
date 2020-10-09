@@ -4,8 +4,8 @@ import { RoundedButtonProps } from './types';
 
 const RoundedButton: FunctionComponent<RoundedButtonProps> = ({ children, text }) => (
     <StyledRoundedButton>
-        <p>{text}</p>
         {children}
+        <p>{text}</p>
     </StyledRoundedButton>
 );
 
