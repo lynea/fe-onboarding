@@ -1,11 +1,11 @@
 import React from 'react';
 import Head from 'next/head';
-import Button from '../components/Button/Botton.component';
+import Button from '../components/Button';
 import { faLongArrowAltRight, faSearch, faStar, faBook } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import FullWidthLayout from '../layout/FullWithLayout';
 import { ButtonContainer, StyledHeader, TextContainer, CenteredImage } from '../layout/MainLayout.styles';
-import { Router, useRouter } from 'next/router';
+import { useRouter } from 'next/router';
 
 export default function Home() {
     const router = useRouter();

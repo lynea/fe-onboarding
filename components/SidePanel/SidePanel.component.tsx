@@ -1,17 +1,28 @@
-import { StringifyOptions } from 'querystring';
 import React, { FunctionComponent } from 'react';
+import { StyledSidepanel } from './SidePanel.styles';
+import { MenuItemProps } from './sub-components/MenuItem';
+import MenuItem from './sub-components/MenuItem';
 
 export interface SidePanelProps {
-    menuItems: MenuItem[];
+    menuItems: MenuItemProps[];
     onMenuItemClicked: () => void;
 }
 
-export interface MenuItem {
-    href: string;
-    text: string;
-    target: '_blank' | string;
-}
+const SidePanel: FunctionComponent<SidePanelProps> = (menuItems, onMenuItemClicked) => {
+    console.log(menuItems);
 
-const SidePanel: FunctionComponent<SidePanelProps> = (menuItems, onMenuItemClicked) => <></>;
+    return (
+        <StyledSidepanel>
+            {menuItems.menuItems.map((menuItem: MenuItemProps, index) => (
+                <MenuItem
+                    key={menuItem.text + index}
+                    href={menuItem.href}
+                    target={menuItem.target}
+                    text={menuItem.text}
+                ></MenuItem>
+            ))}
+        </StyledSidepanel>
+    );
+};
 
 export default SidePanel;

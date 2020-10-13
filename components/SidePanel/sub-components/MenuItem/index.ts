@@ -1,2 +1,3 @@
 export {default} from './MenuItem.component'; 
-export * from './MeniItem.styles'; 
+export * from './MenuItem.styles'; 
+export * from './types'; 
