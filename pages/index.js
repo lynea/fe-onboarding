@@ -1,16 +1,19 @@
 import React from 'react';
 import Head from 'next/head';
-import Button from '../components/Button/Botton.component';
+import Button from '../components/Button';
 import { faLongArrowAltRight, faSearch, faStar, faBook } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import FullWidthLayout from '../layout/FullWithLayout';
 import { ButtonContainer, StyledHeader, TextContainer, CenteredImage } from '../layout/MainLayout.styles';
+import { useRouter } from 'next/router';
 
 export default function Home() {
+    const router = useRouter();
+
     return (
         <>
             <Head>
-                <title>Create Next App</title>
+                <title>Mijndomein onboarding</title>
             </Head>
 
             <FullWidthLayout>
@@ -25,7 +28,12 @@ export default function Home() {
                     <Button type="rounded" className="ghost" text="Skillfinder">
                         <FontAwesomeIcon icon={faSearch} />
                     </Button>
-                    <Button type="rounded" className="ghost" text="Onboarding">
+                    <Button
+                        type="rounded"
+                        className="ghost"
+                        text="Onboarding"
+                        handleClick={() => router.push('./onboarding')}
+                    >
                         <FontAwesomeIcon icon={faStar} />
                     </Button>
 
