@@ -6,13 +6,17 @@ import RegularButton from './sub-components/RegularButton';
 import {} from './Botton.styles';
 import { ButtonProps } from './types';
 
-const Button: FunctionComponent<ButtonProps> = ({ type, children, text, ...otherProps }) => (
+const Button: FunctionComponent<ButtonProps> = ({ type, children, text, handleClick, ...otherProps }) => (
     <>
         {
             {
-                round: <RoundButton>{children}</RoundButton>,
-                rounded: <RoundedButton text={text}>{children}</RoundedButton>,
-                regular: <RegularButton>{children}</RegularButton>,
+                round: <RoundButton onClick={handleClick}>{children}</RoundButton>,
+                rounded: (
+                    <RoundedButton onClick={handleClick} text={text}>
+                        {children}
+                    </RoundedButton>
+                ),
+                regular: <RegularButton onClick={handleClick}>{children}</RegularButton>,
             }[type]
         }
     </>

@@ -1,20 +1,13 @@
-import React, {FunctionComponent, ReactNode} from "react";
-import {StyledMainContainer, StyledContentContainer, StyledSidePanelContainer,StyledTopMenuContainer} from './MainLayout.styles'; 
+import React, { FunctionComponent, ReactNode } from 'react';
+import { StyledMainContainer, StyledContentContainer, StyledSidePanelContainer } from './MainLayout.styles';
 
-
-
-const MainLayout:FunctionComponent = ({children}) => 
+const MainLayout: FunctionComponent = ({ children }) => (
     <>
-    <StyledTopMenuContainer></StyledTopMenuContainer>
-    <StyledMainContainer>
-        <StyledSidePanelContainer>
-
-        </StyledSidePanelContainer>
-        <StyledContentContainer>
-            {children}
-        </StyledContentContainer>
-    </StyledMainContainer>
+        <StyledMainContainer>
+            <StyledSidePanelContainer></StyledSidePanelContainer>
+            <StyledContentContainer>{children}</StyledContentContainer>
+        </StyledMainContainer>
     </>
+);
 
-
-export default MainLayout; 
+export default MainLayout;

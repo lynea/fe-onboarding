@@ -4,7 +4,6 @@ import mediaQueries from '../utils/media-queries';
 export const StyledMainContainer = styled.div`
     display: flex;
     align-items: center;
-    background: transparent linear-gradient(180deg, #1129a8 0%, #6b2fad 100%) 0% 0% no-repeat padding-box;
 `;
 
 export const StyledFullWidthContainer = styled.div`
@@ -92,12 +91,6 @@ export const Row = styled.div`
     justify-content: space-around;
 `;
 
-export const StyledTopMenuContainer = styled.menu`
-    height: 4rem;
-    width: 100%;
-    background: blue;
-    margin: 0;
-`;
 export const StyledContentContainer = styled.section`
     flex: 1;
     padding: clamp(1.8rem, 2.5vw, 2.8rem);
