@@ -8,7 +8,6 @@ export const StyledMainContainer = styled.div`
 
 export const StyledFullWidthContainer = styled.div`
     display: flex;
-
     justify-content: space-around;
     padding: clamp(1rem, 5vw, 3rem) clamp(1.8rem, 9vw, 20rem);
     min-height: 100vh;
@@ -17,12 +16,29 @@ export const StyledFullWidthContainer = styled.div`
 `;
 
 export const StyledSidePanelContainer = styled.aside`
-    flex: 0;
-    @media only screen and (min-width: 600px) {
-        height: 100vh;
+    position: fixed;
+    z-index: 3;
+    top: 0;
+    left: 0;
+    min-height: 100vh;
+    width: 100%;
+    background-color: ${(props) => props.theme.colors.main.purple[300]};
+
+    ${mediaQueries('sm')`
+        flex: 3;
+    `};
+
+    ${mediaQueries('md')`
+        position: initial;
+    `};
+    ${mediaQueries('lg')`
+        position: initial;
+        flex: 2;
+    `};
+
+    ${mediaQueries('xl')`
         flex: 1;
-        background: red;
-    } ;
+    `};
 `;
 export const ButtonContainer = styled.div`
     display: flex;
@@ -94,7 +110,7 @@ export const Row = styled.div`
 export const StyledContentContainer = styled.section`
     flex: 1;
     padding: clamp(1.8rem, 2.5vw, 2.8rem);
-    @media only screen and (min-width: 600px) {
-        flex: 4;
-    } ;
+    ${mediaQueries('sm')`
+        flex:4;
+    `};
 `;

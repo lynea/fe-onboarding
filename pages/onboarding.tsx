@@ -5,7 +5,7 @@ import Elevation from '../components/Elevation';
 
 const StyledElevation = styled(Elevation)`
     height: 50rem;
-    width: 80rem;
+    width: 90%;
     background: white;
 `;
 
