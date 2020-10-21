@@ -1,10 +1,10 @@
 import React, { FunctionComponent } from 'react';
-import { StyledSidepanel } from './SidePanel.styles';
-import { MenuItemProps } from './sub-components/MenuItem';
+import { StyledSidepanel, StyledInnerContainer } from './SidePanel.styles';
+import { MenuItemProps, IMenuItem } from './sub-components/MenuItem';
 import MenuItem from './sub-components/MenuItem';
 
 export interface SidePanelProps {
-    menuItems: MenuItemProps[];
+    menuItems: IMenuItem[];
     onMenuItemClicked: () => void;
 }
 
@@ -13,14 +13,17 @@ const SidePanel: FunctionComponent<SidePanelProps> = (menuItems, onMenuItemClick
 
     return (
         <StyledSidepanel>
-            {menuItems.menuItems.map((menuItem: MenuItemProps, index) => (
-                <MenuItem
-                    key={menuItem.text + index}
-                    href={menuItem.href}
-                    target={menuItem.target}
-                    text={menuItem.text}
-                ></MenuItem>
-            ))}
+            <StyledInnerContainer>
+                {menuItems.menuItems.map((menuItem: MenuItemProps, index) => (
+                    <MenuItem
+                        onItemClick={onMenuItemClicked}
+                        key={menuItem.text + index}
+                        href={menuItem.href}
+                        target={menuItem.target}
+                        text={menuItem.text}
+                    ></MenuItem>
+                ))}
+            </StyledInnerContainer>
         </StyledSidepanel>
     );
 };
