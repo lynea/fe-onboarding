@@ -1,9 +1,24 @@
 import styled from 'styled-components';
 import mediaQueries from '../utils/media-queries';
 
+interface StyledSidePanelContainerProps {
+    isMenuOpen: boolean;
+}
+
 export const StyledMainContainer = styled.div`
     display: flex;
     align-items: center;
+
+    .menuToggle {
+        position: fixed;
+        top: 1rem;
+        right: 1rem;
+        font-size: 1.4rem;
+        cursor: pointer;
+        ${mediaQueries('md')`
+            display:none;
+    `};
+    }
 `;
 
 export const StyledFullWidthContainer = styled.div`
@@ -15,13 +30,14 @@ export const StyledFullWidthContainer = styled.div`
     background: transparent linear-gradient(180deg, #1129a8 0%, #6b2fad 100%) 0% 0% no-repeat padding-box;
 `;
 
-export const StyledSidePanelContainer = styled.aside`
+export const StyledSidePanelContainer = styled.aside<StyledSidePanelContainerProps>`
     position: fixed;
     z-index: 3;
     top: 0;
     left: 0;
     min-height: 100vh;
-    width: 100%;
+    //TODO add animation
+    width: ${({ isMenuOpen }) => (isMenuOpen ? '100%' : '0px')};
     background-color: ${(props) => props.theme.colors.main.purple[300]};
 
     ${mediaQueries('sm')`
@@ -109,7 +125,8 @@ export const Row = styled.div`
 
 export const StyledContentContainer = styled.section`
     flex: 1;
-    padding: clamp(1.8rem, 2.5vw, 2.8rem);
+    padding-left: clamp(1.8rem, 2.5vw, 2.8rem);
+    padding-right: clamp(1.8rem, 2.5vw, 2.8rem);
     ${mediaQueries('sm')`
         flex:4;
     `};

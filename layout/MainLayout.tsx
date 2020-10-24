@@ -1,100 +1,29 @@
-import React, { FunctionComponent } from 'react';
+import React, { FunctionComponent, useState } from 'react';
 import { StyledMainContainer, StyledContentContainer, StyledSidePanelContainer } from './MainLayout.styles';
 import SidePanel from '../components/SidePanel';
+import { menuItems } from '../mocks/MenuMocks';
+import { faBars } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
-//TODO add to mocks file
-const menuItems = [
-    {
-        href: './test',
-        text: 'test',
-        target: '_blank',
-    },
-    {
-        href: './test',
-        text: 'test',
-        target: '_blank',
-    },
-    {
-        href: './test',
-        text: 'test',
-        target: '_blank',
-    },
-    {
-        href: './test',
-        text: 'test',
-        target: '_blank',
-    },
-    {
-        href: './test',
-        text: 'test',
-        target: '_blank',
-    },
-    {
-        href: './test',
-        text: 'test',
-        target: '_blank',
-    },
-    {
-        href: './test',
-        text: 'test',
-        target: '_blank',
-    },
-    {
-        href: './test',
-        text: 'test',
-        target: '_blank',
-    },
-    {
-        href: './test',
-        text: 'test',
-        target: '_blank',
-    },
-    {
-        href: './test',
-        text: 'test',
-        target: '_blank',
-    },
-    {
-        href: './test',
-        text: 'test',
-        target: '_blank',
-    },
-    {
-        href: './test',
-        text: 'test',
-        target: '_blank',
-    },
-    {
-        href: './test',
-        text: 'test',
-        target: '_blank',
-    },
-    {
-        href: './test',
-        text: 'test',
-        target: '_blank',
-    },
-    {
-        href: './test',
-        text: 'test',
-        target: '_blank',
-    },
-    {
-        href: './test',
-        text: 'test',
-        target: '_blank',
-    },
-];
+const MainLayout: FunctionComponent = ({ children }) => {
+    const [isMenuOpen, SetIsMenuOpen] = useState(false);
+    const OnMenuToggle = () => SetIsMenuOpen(!isMenuOpen);
 
-const MainLayout: FunctionComponent = ({ children }) => (
-    <>
-        <StyledMainContainer>
-            <StyledSidePanelContainer>
-                <SidePanel onMenuItemClicked={() => console.log('test')} menuItems={menuItems}></SidePanel>
-            </StyledSidePanelContainer>
-            <StyledContentContainer>{children}</StyledContentContainer>
-        </StyledMainContainer>
-    </>
-);
-
+    return (
+        <>
+            <StyledMainContainer>
+                <FontAwesomeIcon className="menuToggle" onClick={OnMenuToggle} icon={faBars}></FontAwesomeIcon>
+                <StyledSidePanelContainer isMenuOpen={isMenuOpen}>
+                    <SidePanel
+                        onCloseClick={OnMenuToggle}
+                        isOpen={isMenuOpen}
+                        onMenuItemClicked={() => console.log('test')}
+                        menuItems={menuItems}
+                    ></SidePanel>
+                </StyledSidePanelContainer>
+                <StyledContentContainer>{children}</StyledContentContainer>
+            </StyledMainContainer>
+        </>
+    );
+};
 export default MainLayout;
