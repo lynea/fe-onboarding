@@ -125,6 +125,8 @@ export const Row = styled.div`
 
 export const StyledContentContainer = styled.section`
     flex: 1;
+    display: flex;
+    justify-content: space-around;
     padding-left: clamp(1.8rem, 2.5vw, 2.8rem);
     padding-right: clamp(1.8rem, 2.5vw, 2.8rem);
     ${mediaQueries('sm')`

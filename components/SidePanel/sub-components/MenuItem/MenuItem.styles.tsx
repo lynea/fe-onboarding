@@ -6,6 +6,7 @@ interface StyledMenuItemProps {
 }
 
 export const StyledMenuItem = styled.div<StyledMenuItemProps>`
+    cursor: pointer;
     color: white;
     height: 6rem;
     width: 100%;

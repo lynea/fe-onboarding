@@ -18,6 +18,7 @@ export const StyledSidepanel = styled.aside<StyledSidePanelProps>`
         right: 1rem;
         align-self: flex-end;
         margin: 1rem 1rem 0 0;
+        cursor: pointer;
 
         ${mediaQueries('md')`
             display:none;

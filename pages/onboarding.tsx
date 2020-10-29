@@ -1,17 +1,13 @@
 import React from 'react';
 import MainLayout from '../layout/MainLayout';
-import styled from 'styled-components';
 import Elevation from '../components/Elevation';
-
-const StyledElevation = styled(Elevation)`
-    height: 50rem;
-    width: 90%;
-    background: white;
-`;
+import ExplainationCard from '../components/ExplainationCard';
 
 const Onboarding = () => (
     <MainLayout>
-        <StyledElevation elevation={1}></StyledElevation>
+        <Elevation elevation={1}>
+            <ExplainationCard></ExplainationCard>
+        </Elevation>
     </MainLayout>
 );
 
