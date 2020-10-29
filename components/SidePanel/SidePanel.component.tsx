@@ -15,7 +15,13 @@ export interface SidePanelProps {
 const SidePanel: FunctionComponent<SidePanelProps> = ({ menuItems, onMenuItemClicked, isOpen, onCloseClick }) => {
     return (
         <StyledSidepanel isOpen={isOpen}>
-            <FontAwesomeIcon icon={faTimes} className="close" onClick={onCloseClick}></FontAwesomeIcon>
+            <FontAwesomeIcon
+                icon={faTimes}
+                className="close"
+                onClick={onCloseClick}
+                role="button"
+                aria-label="close menu"
+            ></FontAwesomeIcon>
             <StyledInnerContainer>
                 {menuItems.map((menuItem: MenuItemProps, index) => (
                     <MenuItem
