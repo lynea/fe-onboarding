@@ -2,10 +2,12 @@ import { ElevationProps } from './types';
 import styled, { css } from 'styled-components';
 import React, { FunctionComponent } from 'react';
 
+//TODO: see if its doable to wrap around text container
+
 export const StyledElevation = styled.span<ElevationProps>`
     display: block;
-    height: fit-content;
-    width: fit-content;
+    height: 100%;
+    width: 100%;
 
     ${({ elevation }) =>
         elevation === 1 &&
