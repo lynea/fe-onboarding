@@ -124,6 +124,7 @@ export const Row = styled.div`
 `;
 
 export const StyledContentContainer = styled.section`
+    min-height: 100vh;
     flex: 1;
     display: flex;
     justify-content: space-around;
