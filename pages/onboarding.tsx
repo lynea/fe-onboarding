@@ -16,13 +16,15 @@ type OnboardingItems = any;
 const Onboarding = ({ OnboardingItems }: OnboardingItems) => {
     return (
         <MainLayout>
-            {OnboardingItems.map((step: any) => {
+            {OnboardingItems.map((step: any, index) => {
                 //TODO: think out routing logic for each step and pass to explainationCard
                 return (
-                    <>
-                        <h1>works bitches</h1>
+                    <div key={index + step.fields.step}>
+                        <Text family="book" defaultSize={100} weight={100}>
+                            works bitches
+                        </Text>
                         <ExplainationCard key={step.fields.step}></ExplainationCard>;
-                    </>
+                    </div>
                 );
             })}
         </MainLayout>
