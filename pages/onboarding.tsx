@@ -3,16 +3,45 @@ import MainLayout from '../layout/MainLayout';
 import ExplainationCard from '../components/ExplainationCard';
 import Text from '../components/Text';
 
-const Onboarding = () => (
-    <MainLayout>
-        <ExplainationCard></ExplainationCard>
-        <Text family="book" size={100} weight={100}>
-            Test text
-        </Text>
-        <Text family="book" size={400} weight={400}>
-            Test text
-        </Text>
-    </MainLayout>
-);
+import { GetStaticProps } from 'next';
+
+// eslint-disable-next-line @typescript-eslint/no-var-requires
+const client = require('contentful').createClient({
+    space: process.env.NEXT_PUBLIC_CONTENTFUL_SPACE_ID,
+    accessToken: process.env.NEXT_PUBLIC_CONTENTFUL_ACCESS_TOKEN,
+});
+//TODO: fix any typing
+type OnboardingItems = any;
+
+const Onboarding = ({ OnboardingItems }: OnboardingItems) => {
+    return (
+        <MainLayout>
+            {OnboardingItems.map((step: any) => {
+                //TODO: think out routing logic for each step and pass to explainationCard
+                return (
+                    <>
+                        <h1>works bitches</h1>
+                        <ExplainationCard key={step.fields.step}></ExplainationCard>;
+                    </>
+                );
+            })}
+        </MainLayout>
+    );
+};
+
+export const getStaticProps: GetStaticProps = async () => {
+    const fetchEntries = async () => {
+        const entries = await client.getEntries();
+        if (entries.items) return entries.items;
+    };
+
+    const OnboardingItems = await fetchEntries();
+
+    return {
+        props: {
+            OnboardingItems,
+        }, // will be passed to the page component as props
+    };
+};
 
 export default Onboarding;
