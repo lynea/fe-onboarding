@@ -3,7 +3,11 @@ import styled, { css } from 'styled-components';
 type TextProps = {
     //** use custom string for custom font */
     family: 'book' | 'black' | 'string';
-    size: 100 | 200 | 300 | 400 | 500;
+    defaultSize: 100 | 200 | 300 | 400 | 500;
+    smSize?: 100 | 200 | 300 | 400 | 500;
+    mdSize?: 100 | 200 | 300 | 400 | 500;
+    lgSize?: 100 | 200 | 300 | 400 | 500;
+    xlSize?: 100 | 200 | 300 | 400 | 500;
     weight: 100 | 200 | 300 | 400 | 500;
     //** only use when you want a custom src */
     src?: string;
@@ -52,7 +56,7 @@ export const Text = styled.span<TextProps>`
             url(${(props) => props.src || '/fonts/OpenSans-Regular-webfont.woff2'}) format('woff');
     }
 
-    ${({ size }) => sizes[size]};
+    ${({ defaultSize }) => sizes[defaultSize]};
     font-family: ${({ family }) => (family === 'book' || family === 'black' ? families[family] : family)};
     font-weight: ${({ weight }) => weight};
 `;
