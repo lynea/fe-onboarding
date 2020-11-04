@@ -20,7 +20,12 @@ const Onboarding = ({ OnboardingItems }: OnboardingItems) => {
                 //TODO: think out routing logic for each step and pass to explainationCard
                 return (
                     <div key={index + step.fields.step}>
-                        <Text family="book" defaultSize={100} weight={100}>
+                        <Text
+                            as="h1"
+                            family="book"
+                            sizes={{ default: 100, sm: 200, md: 300, lg: 400, xl: 500 }}
+                            weight={100}
+                        >
                             works bitches
                         </Text>
                         <ExplainationCard key={step.fields.step}></ExplainationCard>;
