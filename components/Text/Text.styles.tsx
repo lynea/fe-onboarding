@@ -1,19 +1,22 @@
 import styled, { css } from 'styled-components';
+import { device } from '../../utils/media-queries';
 
 type TextProps = {
     //** use custom string for custom font */
     family: 'book' | 'black' | 'string';
-    defaultSize: 100 | 200 | 300 | 400 | 500;
-    smSize?: 100 | 200 | 300 | 400 | 500;
-    mdSize?: 100 | 200 | 300 | 400 | 500;
-    lgSize?: 100 | 200 | 300 | 400 | 500;
-    xlSize?: 100 | 200 | 300 | 400 | 500;
+    sizes: {
+        default: 100 | 200 | 300 | 400 | 500;
+        sm?: 100 | 200 | 300 | 400 | 500;
+        md?: 100 | 200 | 300 | 400 | 500;
+        lg?: 100 | 200 | 300 | 400 | 500;
+        xl?: 100 | 200 | 300 | 400 | 500;
+    };
     weight: 100 | 200 | 300 | 400 | 500;
     //** only use when you want a custom src */
     src?: string;
 };
 
-const sizes = {
+const fontSizes = {
     100: css`
         font-size: 1.2rem;
         line-height: 1.1rem;
@@ -31,7 +34,7 @@ const sizes = {
         line-height: 2.4rem;
     `,
     500: css`
-        font-size: 2.4rem;
+        font-size: 4.8rem;
         line-height: 2.4rem;
     `,
 };
@@ -56,9 +59,24 @@ export const Text = styled.span<TextProps>`
             url(${(props) => props.src || '/fonts/OpenSans-Regular-webfont.woff2'}) format('woff');
     }
 
-    ${({ defaultSize }) => sizes[defaultSize]};
+    ${({ sizes }) => fontSizes[sizes.default]};
     font-family: ${({ family }) => (family === 'book' || family === 'black' ? families[family] : family)};
     font-weight: ${({ weight }) => weight};
+
+    @media only screen and (${device.sm}) {
+        ${({ sizes }) => (sizes.sm ? fontSizes[sizes.sm] : null)};
+    }
+    @media only screen and (${device.md}) {
+        ${({ sizes }) => (sizes.md ? fontSizes[sizes.md] : null)};
+    }
+
+    @media only screen and (${device.lg}) {
+        ${({ sizes }) => (sizes.lg ? fontSizes[sizes.lg] : null)};
+    }
+
+    @media only screen and (${device.xl}) {
+        ${({ sizes }) => (sizes.xl ? fontSizes[sizes.xl] : null)};
+    }
 `;
 
 export default Text;
