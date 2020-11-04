@@ -1,8 +1,6 @@
 import React from 'react';
 import MainLayout from '../layout/MainLayout';
 import ExplainationCard from '../components/ExplainationCard';
-import Text from '../components/Text';
-
 import { GetStaticProps } from 'next';
 
 // eslint-disable-next-line @typescript-eslint/no-var-requires
@@ -16,13 +14,10 @@ type OnboardingItems = any;
 const Onboarding = ({ OnboardingItems }: OnboardingItems) => {
     return (
         <MainLayout>
-            {OnboardingItems.map((step: any, index) => {
+            {OnboardingItems.map((step: any, index: any) => {
                 //TODO: think out routing logic for each step and pass to explainationCard
                 return (
                     <div key={index + step.fields.step}>
-                        <Text family="book" defaultSize={100} weight={100}>
-                            works bitches
-                        </Text>
                         <ExplainationCard key={step.fields.step}></ExplainationCard>;
                     </div>
                 );
