@@ -6,15 +6,15 @@ import CodeBlock from '../../CodeBlock';
 
 const TextContainer: FunctionComponent<TextContainerProps> = ({ TextContainerObj }) => (
     <StyledTextContainer>
-        <Text as="h1" weight={100} family="book" defaultSize={400}>
+        <Text as="h1" weight={100} family="book" sizes={{ default: 100 }}>
             {TextContainerObj.title}
         </Text>
         {TextContainerObj.paragraphs.map((paragraph, index) => (
             <div key={paragraph.title + index}>
-                <Text as="h2" weight={100} family="book" defaultSize={400}>
+                <Text as="h2" weight={100} family="book" sizes={{ default: 100 }}>
                     {paragraph.title}
                 </Text>
-                <Text as="p" weight={100} family="book" defaultSize={200}>
+                <Text as="p" weight={100} family="book" sizes={{ default: 100 }}>
                     {' '}
                     {paragraph.body?.text}
                 </Text>

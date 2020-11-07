@@ -3,8 +3,8 @@ import Head from 'next/head';
 import Button from '../components/Button';
 import { faLongArrowAltRight, faSearch, faStar, faBook } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import FullWidthLayout from '../layout/FullWithLayout';
-import { ButtonContainer, StyledHeader, TextContainer, CenteredImage } from '../layout/MainLayout.styles';
+import FullWidthLayout from '../layout/FullWidthLayout';
+import { ButtonContainer, StyledHeader, TextContainer, CenteredImage } from '../layout/FullWidthLayout';
 import { useRouter } from 'next/router';
 
 export default function Home() {

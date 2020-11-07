@@ -31,6 +31,7 @@
     },
     "devDependencies": {
         "@babel/plugin-proposal-export-default-from": "^7.10.4",
+        "@types/react-syntax-highlighter": "^13.5.0",
         "eslint": "^7.10.0"
     }
 }

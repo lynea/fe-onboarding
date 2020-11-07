@@ -3,10 +3,10 @@ import mediaQueries from '../../utils/media-queries';
 
 interface StyledSidePanelProps {
     isOpen: boolean;
+    className?: string;
 }
 
 export const StyledSidepanel = styled.aside<StyledSidePanelProps>`
-    width: 100%;
     min-height: 100%;
     background-color: ${(props) => props.theme.colors.main.purple[300]};
     display: flex;

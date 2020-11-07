@@ -10,11 +10,19 @@ export interface SidePanelProps {
     onMenuItemClicked: () => void;
     onCloseClick: () => void;
     isOpen: boolean;
+    className?: string;
 }
 
-const SidePanel: FunctionComponent<SidePanelProps> = ({ menuItems, onMenuItemClicked, isOpen, onCloseClick }) => {
+const SidePanel: FunctionComponent<SidePanelProps> = ({
+    menuItems,
+    onMenuItemClicked,
+    isOpen,
+    onCloseClick,
+    className,
+    ...otherProps
+}) => {
     return (
-        <StyledSidepanel isOpen={isOpen}>
+        <StyledSidepanel isOpen={isOpen} className={className}>
             <FontAwesomeIcon
                 icon={faTimes}
                 className="close"
