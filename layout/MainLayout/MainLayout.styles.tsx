@@ -90,9 +90,14 @@ export const StyledToggle = styled.span`
 
 export const ContentContainer = styled.section`
     min-height: calc(100vh);
-    grid-column: 4 / 12;
+    grid-column: 1 / 13;
     grid-row: 1;
-    display: grid;
+    display: flex;
+
+    ${mediaQueries('md')`   
+    grid-column: 4 / 12;
+    align-items:center;
+     `};
 `;
 
 export const GridSidePanel = styled(SidePanel)`
@@ -103,9 +108,11 @@ export const GridSidePanel = styled(SidePanel)`
     min-height: 100vh; //TODO add animation
     width: ${({ isOpen }) => (isOpen ? '100%' : '0px')};
     background-color: ${(props) => props.theme.colors.main.purple[300]};
-    /* 
-    grid-column: 1 / 3;
-    grid-row: 1; */
-`;
 
-const StyledTestBox = styled.div``;
+    ${mediaQueries('md')`   
+    position: initial;
+    grid-column: 1 / 3;
+    grid-row: 1;
+    width:100%;
+     `};
+`;
