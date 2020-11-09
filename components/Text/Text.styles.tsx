@@ -19,15 +19,15 @@ type TextProps = {
 const fontSizes = {
     100: css`
         font-size: 1.2rem;
-        line-height: 1.1rem;
+        line-height: 1.4rem;
     `,
     200: css`
         font-size: 1.6rem;
-        line-height: 1.6rem;
+        line-height: 1.8rem;
     `,
     300: css`
         font-size: 1.8rem;
-        line-height: 1.8rem;
+        line-height: 2rem;
     `,
     400: css`
         font-size: 2.4rem;
@@ -39,10 +39,10 @@ const fontSizes = {
     `,
 };
 
-const defaultFont = 'font-family: Arial, Helvetica, sans-serif;';
+const defaultFont = 'Arial, Helvetica, sans-serif;';
 
 const families = {
-    book: `circular-book, ${defaultFont}`,
+    book: `Rubic, ${defaultFont}`,
     black: `circular-black, ${defaultFont}`,
 };
 
