@@ -1,4 +1,4 @@
 export interface RoundedButtonProps {
     text: string;
-    onClick : () => void;
+    onClick? : () => void;
 }
