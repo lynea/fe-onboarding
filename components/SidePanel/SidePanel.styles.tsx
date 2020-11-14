@@ -1,12 +1,12 @@
 import styled from 'styled-components';
 import mediaQueries from '../../utils/media-queries';
+import { motion } from 'framer-motion';
 
 interface StyledSidePanelProps {
     isOpen: boolean;
 }
 
-export const StyledSidepanel = styled.aside<StyledSidePanelProps>`
-    width: 100%;
+export const StyledSidepanel = styled(motion.aside)<StyledSidePanelProps>`
     min-height: 100%;
     background-color: ${(props) => props.theme.colors.main.purple[300]};
     display: flex;
@@ -25,7 +25,7 @@ export const StyledSidepanel = styled.aside<StyledSidePanelProps>`
     `};
     }
 `;
-export const StyledInnerContainer = styled.aside`
+export const StyledInnerContainer = styled.div`
     max-height: 99vh;
     width: 100%;
     overflow-y: scroll;

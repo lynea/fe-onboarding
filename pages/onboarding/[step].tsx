@@ -1,8 +1,6 @@
 import React from 'react';
-import MainLayout from '../layout/MainLayout';
-import ExplainationCard from '../components/ExplainationCard';
-import Text from '../components/Text';
-
+import MainLayout from '../../layout/MainLayout';
+import ExplainationCard from '../../components/ExplainationCard';
 import { GetStaticProps } from 'next';
 
 // eslint-disable-next-line @typescript-eslint/no-var-requires
@@ -16,20 +14,35 @@ type OnboardingItems = any;
 const Onboarding = ({ OnboardingItems }: OnboardingItems) => {
     return (
         <MainLayout>
-            {OnboardingItems.map((step: any) => {
+            {OnboardingItems.map((step: any, index: any) => {
                 //TODO: think out routing logic for each step and pass to explainationCard
                 return (
-                    <>
-                        <h1>works bitches</h1>
-                        <ExplainationCard key={step.fields.step}></ExplainationCard>;
-                    </>
+                    <div key={index + step.fields.step}>
+                        <ExplainationCard key={step.fields.step}></ExplainationCard>
+                    </div>
                 );
             })}
         </MainLayout>
     );
 };
 
-export const getStaticProps: GetStaticProps = async () => {
+export async function getStaticPaths() {
+    const fetchEntries = async () => {
+        const entries = await client.getEntries();
+        if (entries.items) return entries.items;
+    };
+
+    const OnboardingItems = await fetchEntries();
+    //TODO: remove any
+    const paths = OnboardingItems.map((item: any) => ({ params: { step: `${item.fields.step}` } }));
+
+    return {
+        paths: paths,
+        fallback: false,
+    };
+}
+//TODO: fetch data based on params step for the current step
+export const getStaticProps: GetStaticProps = async (params) => {
     const fetchEntries = async () => {
         const entries = await client.getEntries();
         if (entries.items) return entries.items;
@@ -37,17 +50,10 @@ export const getStaticProps: GetStaticProps = async () => {
 
     const OnboardingItems = await fetchEntries();
 
-    //TODO place in app component
-    const menuItems = OnboardingItems.find((item: any) => {
-        return item.sys.contentType.sys.id == 'menu';
-    });
-
-    menuItems;
-
     return {
         props: {
             OnboardingItems,
-        }, // will be passed to the page component as props
+        },
     };
 };
 

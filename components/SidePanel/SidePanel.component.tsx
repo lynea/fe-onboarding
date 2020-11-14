@@ -10,11 +10,25 @@ export interface SidePanelProps {
     onMenuItemClicked: () => void;
     onCloseClick: () => void;
     isOpen: boolean;
+    className?: string;
 }
 
-const SidePanel: FunctionComponent<SidePanelProps> = ({ menuItems, onMenuItemClicked, isOpen, onCloseClick }) => {
+const SidePanel: FunctionComponent<SidePanelProps> = ({
+    menuItems,
+    onMenuItemClicked,
+    isOpen,
+    onCloseClick,
+    className,
+    ...otherProps
+}) => {
+    const variants = {
+        open: { opacity: 1, x: -1 },
+        closed: { opacity: 0, x: '-100%' },
+    };
     return (
-        <StyledSidepanel isOpen={isOpen}>
+        //@ts-ignore
+        // <StyledSidepanel animate={isOpen ? 'open' : 'closed'} variants={variants} className={className}>
+        <StyledSidepanel isOpen={isOpen} className={className}>
             <FontAwesomeIcon
                 icon={faTimes}
                 className="close"
@@ -30,6 +44,7 @@ const SidePanel: FunctionComponent<SidePanelProps> = ({ menuItems, onMenuItemCli
                         href={menuItem.href}
                         target={menuItem.target}
                         text={menuItem.text}
+                        iconName={menuItem.iconName}
                     ></MenuItem>
                 ))}
             </StyledInnerContainer>
