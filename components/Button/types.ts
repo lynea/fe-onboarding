@@ -1,6 +1,6 @@
 export interface ButtonProps {
     type: 'round' | 'rounded' | 'regular';
-    className: string;
-    text: string;
-    handleClick? : () => void;
+    className?: string;
+    text?: string;
+    handleClick?: () => void;
 }
