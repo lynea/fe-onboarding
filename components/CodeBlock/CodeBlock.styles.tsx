@@ -16,3 +16,12 @@ export const StyledCodeBlock = styled.div`
         cursor: pointer;
     }
 `;
+
+type SuccesMessageContainerProps = {
+    isVisible: boolean;
+};
+
+export const SuccesMessageContainer = styled.div<SuccesMessageContainerProps>`
+    color: green;
+    visibility: ${(props) => (props.isVisible ? 'visible' : 'hidden')};
+`;

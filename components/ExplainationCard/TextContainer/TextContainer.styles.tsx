@@ -11,3 +11,10 @@ export const Paragraph = styled.div`
     width: 90%;
     height: 90%;
 `;
+
+export const ButtonContainer = styled.div`
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    margin-top: 2rem;
+`;
