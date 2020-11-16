@@ -32,7 +32,7 @@ export default function Home() {
                         type="rounded"
                         className="ghost"
                         text="Onboarding"
-                        handleClick={() => router.push('./onboarding')}
+                        handleClick={() => router.push('./onboarding/1')}
                     >
                         <FontAwesomeIcon icon={faStar} />
                     </Button>

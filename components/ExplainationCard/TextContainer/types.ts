@@ -3,7 +3,6 @@ export interface TextContainerProps {
         imageUrl?: string;
         title: string;
         paragraphs: paragraph[];
-        
     };
 }
 
@@ -12,5 +11,5 @@ export interface paragraph {
     body: {
         text?: string;
         codeBlock?: string;
-    }
+    };
 }

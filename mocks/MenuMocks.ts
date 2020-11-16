@@ -1,8 +1,9 @@
-export  const menuItems = [
+export const menuItems = [
     {
-        href: './test',
-        text: 'test',
+        href: '/',
+        text: 'Home',
         target: '_blank',
+        iconName: 'home',
     },
     {
         href: './test',
