@@ -7,7 +7,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 export interface SidePanelProps {
     menuItems: IMenuItem[];
-    onMenuItemClicked: () => void;
+    onMenuItemClicked?: () => void;
     onCloseClick: () => void;
     isOpen: boolean;
     className?: string;
@@ -19,7 +19,6 @@ const SidePanel: FunctionComponent<SidePanelProps> = ({
     isOpen,
     onCloseClick,
     className,
-    ...otherProps
 }) => {
     return (
         <StyledSidepanel isOpen={isOpen} className={className}>

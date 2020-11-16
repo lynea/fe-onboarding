@@ -1,12 +1,10 @@
-
 export interface MenuItemProps extends IMenuItem {
-    onItemClick: () => void; 
+    onItemClick?: () => void;
 }
 
 export interface IMenuItem {
     href: string;
     text: string;
     target: '_blank' | string;
-    iconName?:string; 
+    iconName?: string;
 }
-

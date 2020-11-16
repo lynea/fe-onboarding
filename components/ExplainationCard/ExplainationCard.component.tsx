@@ -1,14 +1,15 @@
 import { StyledCardContainer } from './ExplainationCard.styles';
 import TextContainer from './TextContainer';
-import TextContainerObj from '../../mocks/TextContainerMocks';
 import React from 'react';
 
 //TODO: add text prop , title etc and inner container
 // image option (next 10)
 
-export type ExplainationCardProps = {};
+export type ExplainationCardProps = {
+    TextContainerObj: any;
+};
 
-const ExplainationCard: React.FC<ExplainationCardProps> = ({}) => {
+const ExplainationCard: React.FC<ExplainationCardProps> = ({ TextContainerObj }) => {
     return (
         <StyledCardContainer>
             <TextContainer TextContainerObj={TextContainerObj}></TextContainer>

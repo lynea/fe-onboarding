@@ -10,7 +10,9 @@ const MenuItem: FunctionComponent<MenuItemProps> = ({ children, href, text, icon
 
     const handleClick = (e: any) => {
         e.preventDefault();
-        onItemClick();
+        if (onItemClick) {
+            onItemClick();
+        }
         setActive(true);
     };
 
