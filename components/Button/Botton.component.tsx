@@ -10,13 +10,21 @@ const Button: FunctionComponent<ButtonProps> = ({ type, children, text, handleCl
     <>
         {
             {
-                round: <RoundButton onClick={handleClick}>{children}</RoundButton>,
+                round: (
+                    <RoundButton onClick={handleClick} {...otherProps}>
+                        {children}
+                    </RoundButton>
+                ),
                 rounded: (
-                    <RoundedButton onClick={handleClick} text={text}>
+                    <RoundedButton onClick={handleClick} text={text} {...otherProps}>
                         {children}
                     </RoundedButton>
                 ),
-                regular: <RegularButton onClick={handleClick}>{children}</RegularButton>,
+                regular: (
+                    <RegularButton onClick={handleClick} {...otherProps}>
+                        {children}
+                    </RegularButton>
+                ),
             }[type]
         }
     </>

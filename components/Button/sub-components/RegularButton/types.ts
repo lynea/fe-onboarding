@@ -1,3 +1,4 @@
 export interface RegularBottonProps {
-    onClick?: () => void; 
+    onClick?: () => void;
+    className?: string;
 }
