@@ -12,19 +12,24 @@ export const StyledSidepanel = styled.aside<StyledSidePanelProps>`
     display: flex;
     flex-direction: column;
 
-    .close {
+    .close,
+    .collapse {
         color: white;
-        font-size: 1.8rem;
+        font-size: 2rem;
         right: 1rem;
         align-self: flex-end;
         margin: 1rem 1rem 0 0;
         cursor: pointer;
-
+        /* TODO:animation */
+        transform: rotate(180deg);
+    }
+    .close {
         ${mediaQueries('md')`
             display:none;
     `};
     }
 `;
+
 export const StyledInnerContainer = styled.aside`
     max-height: 99vh;
     width: 100%;
