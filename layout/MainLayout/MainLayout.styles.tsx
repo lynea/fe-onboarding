@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 import mediaQueries from '../../utils/media-queries';
 import SidePanel from '../../components/SidePanel';
+import { device } from '../../utils/media-queries';
 
 interface GridSidePanelContainerProps {
     isMenuOpen: boolean;
@@ -105,14 +106,14 @@ export const GridSidePanel = styled(SidePanel)`
     z-index: 3;
     top: 0;
     left: 0;
-    min-height: 100vh; //TODO add animation
+    min-height: 100vh;
     width: ${({ isOpen }) => (isOpen ? '100%' : '0px')};
     background-color: ${(props) => props.theme.colors.main.purple[300]};
 
-    ${mediaQueries('md')`   
-    position: initial;
-    grid-column: 1 / 3;
-    grid-row: 1;
-    width:100%;
-     `};
+    @media only screen and (min-width: 600px) {
+        position: initial;
+        grid-row: 1;
+        grid-column: ${({ isOpen }) => (isOpen ? '1 / 3' : '1/2')};
+        width: 100%;
+    }
 `;

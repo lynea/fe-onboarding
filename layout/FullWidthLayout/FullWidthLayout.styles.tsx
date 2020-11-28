@@ -35,29 +35,30 @@ export const ButtonContainer = styled.div`
     }
 
     ${mediaQueries('sm')`
+        grid-template-rows: 12rem 12rem;
         grid-gap: 2rem;
         .button-1 {
-            grid-column: 2 / 7;
+            grid-column: 1 / 7;
         }
         .button-2 {
-            grid-column: 7 / 12;
+            grid-column: 7 / 13;
         }
         .button-3 {
-            grid-column: 2 / 7;
+            grid-column: 1 / 7;
             grid-row: 2;
         }
         .button-4 {
-            grid-column: 7 / 12;
+            grid-column: 7 / 13;
             grid-row: 2;
         }
     `};
     ${mediaQueries('md')`
-       grid-template-rows: 15rem;
+       grid-template-rows: 15rem 15rem;
        
     `};
 
     ${mediaQueries('lg')`
-    grid-template-rows: 15rem 300px;
+    grid-template-rows: 20rem;
         .button-1 {
             grid-column: 1 / 4;
             grid-row: 1;
@@ -74,6 +75,9 @@ export const ButtonContainer = styled.div`
             grid-column: 10 / 13;
             grid-row: 1;
         }
+    `};
+    ${mediaQueries('xl')`
+    grid-template-rows: 20rem;
     `};
 `;
 

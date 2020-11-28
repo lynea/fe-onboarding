@@ -3,6 +3,7 @@ export interface MenuItemProps extends IMenuItem {
 }
 
 export interface IMenuItem {
+    showIcon: boolean;
     href: string;
     text: string;
     target: '_blank' | string;

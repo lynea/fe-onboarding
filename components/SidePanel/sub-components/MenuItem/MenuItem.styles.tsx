@@ -3,18 +3,30 @@ import mediaQueries from '../../../../utils/media-queries';
 
 interface StyledMenuItemProps {
     className: string;
+    showIcon: boolean;
 }
 
 export const StyledMenuItem = styled.div<StyledMenuItemProps>`
     cursor: pointer;
+    position: relative;
     color: white;
-    height: 6rem;
+    height: 5rem;
     width: 100%;
     font-size: 1.6rem;
     display: flex;
     align-items: center;
     padding: 1rem;
     box-sizing: border-box;
+    justify-content: ${({ showIcon }) => (showIcon ? 'initial' : 'center')};
+
+    .active-indicator {
+        position: absolute;
+        right: 0;
+        height: 100%;
+        width: 0.5rem;
+        background: ${(props) => props.theme.colors.main.blue[300]};
+        display: none;
+    }
 
     a {
         color: white;
@@ -24,10 +36,13 @@ export const StyledMenuItem = styled.div<StyledMenuItemProps>`
 
     &.active {
         //TODO swap for color variable
-        background-color: purple;
+        background-color: ${(props) => props.theme.colors.main.purple[500]};
+        .active-indicator {
+            display: block;
+        }
     }
 
     ${mediaQueries('sm')`
-        font-size: 1.8rem;
+      
     `};
 `;
